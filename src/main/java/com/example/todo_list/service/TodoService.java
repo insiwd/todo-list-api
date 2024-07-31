@@ -11,7 +11,7 @@ import com.example.todo_list.repository.TodoRepository;
 @Service
 public class TodoService {
 
-    private TodoRepository todoRepository;
+    private final TodoRepository todoRepository;
 
     // podemos injetar dependências via atributo, método ou construtor
     // a via construtor não necessita o @Autowired, e é mais recomendada
@@ -25,7 +25,7 @@ public class TodoService {
      * todas as nossas operações retornarão uma lista todo
      */
 
-     public List<Todo> create(Todo todo) {
+    public List<Todo> create(Todo todo) {
         todoRepository.save(todo);
 
         /*
@@ -33,7 +33,7 @@ public class TodoService {
          * criado
          */
 
-         return list();
+        return list();
     }
 
     public List<Todo> list() {
