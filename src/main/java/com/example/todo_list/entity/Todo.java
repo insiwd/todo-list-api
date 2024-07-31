@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "todos")
 public class Todo {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +18,7 @@ public class Todo {
     private String descricao;
     private boolean completado;
     private int prioridade;
-    
+
     public Long getId() {
         return id;
     }
